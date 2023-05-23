@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router";
-import { Navbar } from "../components/Navbar";
+import { Navbar } from "./Navbar";
 import { Loader } from "../loaders/AnimalLoader";
 import "../scss/AnimalView.scss";
 import { useState } from "react";
@@ -7,7 +7,7 @@ import { IAnimals } from "../models/IAnimal";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDroplet, faLeaf, faPoo } from "@fortawesome/free-solid-svg-icons";
-import { Footer } from "../components/Footer";
+import { Footer } from "./Footer";
 import bucket from "../assets/bucket.png";
 
 export const AnimalView = () => {
@@ -161,12 +161,6 @@ export const AnimalView = () => {
       </>
     );
 
-    return (
-      <>
-        <Navbar></Navbar>
-        {showAnimal}
-        <Footer></Footer>
-      </>
-    );
+    return <>{showAnimal}</>;
   }
 };

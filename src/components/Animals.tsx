@@ -1,11 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
+import { Navbar } from "./Navbar";
 import "../scss/Animals.scss";
 import { Loader } from "../loaders/AnimalLoader";
 import defaultImage from "../assets/zoo-clipart.svg";
 import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Footer } from "../components/Footer";
+import { Footer } from "./Footer";
 export const Animals = () => {
   const { animals } = useLoaderData() as Loader;
 
@@ -27,13 +27,11 @@ export const Animals = () => {
 
   return (
     <>
-      <Navbar></Navbar>
       <div id="topOfPage"></div>
       <div className="container">{showAnimals}</div>
       <a href="#topOfPage" className="arrowContainer">
         <FontAwesomeIcon id="arrow" icon={faCircleUp} />
       </a>
-      <Footer></Footer>
     </>
   );
 };
