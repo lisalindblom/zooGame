@@ -1,5 +1,5 @@
 import "./App.scss";
-import { LandingPage } from "./pages/LandingPage";
+import { LandingPage } from "./components/pages/LandingPage";
 
 function App() {
   return <div className="App"></div>;

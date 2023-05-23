@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { LandingPage } from "./pages/LandingPage";
-import { Animals } from "./pages/Animals";
-import { Error } from "./pages/Error";
-import { AnimalView } from "./pages/AnimalView";
+import { LandingPage } from "./components/pages/LandingPage";
+import { Animals } from "./components/Animals";
+import { Error } from "./components/pages/Error";
+import { AnimalView } from "./components/AnimalView";
 import { animalLoader } from "./loaders/AnimalLoader";
+import { AllAnimals } from "./components/pages/AllAnimals";
+import { AnimalDetailPage } from "./components/pages/AnimalDetailpage";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +19,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/animals",
-    element: <Animals></Animals>,
+    element: <AllAnimals></AllAnimals>,
     loader: animalLoader,
   },
   {
     path: "/animals/:id",
-    element: <AnimalView></AnimalView>,
+    element: <AnimalDetailPage></AnimalDetailPage>,
     loader: animalLoader,
   },
 ]);

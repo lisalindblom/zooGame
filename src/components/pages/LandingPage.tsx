@@ -1,10 +1,8 @@
-import { Navbar } from "../components/Navbar";
-import zooSvg from "../assets/zoo-clipart.svg";
-import "../scss/LandingPage.scss";
+import { Navbar } from "../Navbar";
+import "../../scss/LandingPage.scss";
 import { Link, useLoaderData } from "react-router-dom";
-import { Loader } from "../loaders/AnimalLoader";
-import { AnimalTest } from "../components/AnimalTest";
-import { Footer } from "../components/Footer";
+import { Loader } from "../../loaders/AnimalLoader";
+import { Footer } from "../Footer";
 
 export const LandingPage = () => {
   const { animals } = useLoaderData() as Loader;
