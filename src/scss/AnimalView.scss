@@ -1,0 +1,100 @@
+@use "mixins";
+
+.clickedAnimal,
+#animalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 90px;
+  border-radius: 4px;
+}
+
+#animalContainer {
+  width: 80%;
+  padding: 30px;
+  min-height: 50vh;
+
+  .feedingMessage {
+    margin-top: 10px;
+    padding: 10px 15px 10px 15px;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 7px;
+    text-align: center;
+    width: fit-content;
+    border-radius: 5px;
+    margin-right: -200px;
+    border: inset rgba(128, 128, 128, 0.792) 2px;
+  }
+  .imageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 50%;
+    #animal {
+      width: 80%;
+    }
+    #bucket {
+      height: 10%;
+    }
+  }
+
+  @include mixins.tablet {
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+    .feedingMessage {
+      margin-right: 0px;
+      align-self: flex-start;
+    }
+    #animal {
+      width: 30%;
+    }
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  p {
+    width: 100%;
+    text-align: center;
+  }
+  @include mixins.tablet {
+    p {
+      width: 80%;
+      text-align: center;
+    }
+  }
+}
+.fed {
+  background-color: #2b6f187c;
+}
+
+.notFed {
+  background-color: rgba(233, 25, 25, 0.877);
+}
+
+.notCleaned {
+  border-radius: 10px;
+  background: rgb(22, 95, 22);
+  background: linear-gradient(
+    180deg,
+    rgba(43, 111, 24, 0) 77%,
+    rgba(128, 73, 2, 1) 87%
+  );
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  button:hover {
+    transform: scale(1.1);
+  }
+}
