@@ -137,10 +137,19 @@ export const AnimalView = () => {
             </div>
 
             <div className="textContainer">
-              <h2 className="title">{current?.name}</h2>
-              <p>{current?.description}</p>
-              <p>Matades senast: {current?.lastFed}</p>
-              <p>{toggleMsg ? "" : msg}</p>
+              <div className="blackBoard">
+                <h2 className="title">{current?.name}</h2>
+                <p className="description">{current?.description}</p>
+                <div className="info">
+                  <p>Matades senast: {current?.lastFed}</p>
+                  <p>Vatten byttes: {current?.lastWaterRefill}</p>
+                  <p>Buren städades: {current?.lastCleaned}</p>
+                </div>
+                <div className="message">
+                  <h3>Meddelande:</h3>
+                  <p>{toggleMsg ? "" : msg}</p>
+                </div>
+              </div>
 
               <div className="buttonContainer">
                 <button onClick={handleFeedingClick}>

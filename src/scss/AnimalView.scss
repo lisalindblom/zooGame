@@ -58,19 +58,39 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  p {
-    width: 100%;
-    text-align: center;
-  }
-  @include mixins.tablet {
-    p {
-      width: 80%;
-      text-align: center;
-    }
-  }
+  height: 90%;
+}
+.title {
+  grid-area: title;
+  text-align: center;
+}
+.description {
+  grid-area: description;
+  text-align: center;
+}
+.info {
+  grid-area: info;
+}
+.message {
+  grid-area: message;
+  border: dotted white 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blackBoard {
+  display: grid;
+  grid-template-areas:
+    "title title title "
+    "description description description"
+    "info info message";
+  gap: 10px;
+  background-color: #545353;
+  border: 5px solid #a27053;
+  padding: 15px;
+  margin: 15px;
 }
 .fed {
   background-color: #2b6f187c;
@@ -94,6 +114,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 50px;
   button:hover {
     transform: scale(1.1);
   }
