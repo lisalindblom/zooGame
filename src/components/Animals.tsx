@@ -1,11 +1,10 @@
 import { Link, useLoaderData } from "react-router-dom";
-import { Navbar } from "./Navbar";
 import "../scss/Animals.scss";
 import { Loader } from "../loaders/AnimalLoader";
 import defaultImage from "../assets/zoo-clipart.svg";
 import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Footer } from "./Footer";
+
 export const Animals = () => {
   const { animals } = useLoaderData() as Loader;
 

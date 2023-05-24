@@ -1,5 +1,4 @@
 import { useLoaderData, useParams } from "react-router";
-import { Navbar } from "./Navbar";
 import { Loader } from "../loaders/AnimalLoader";
 import "../scss/AnimalView.scss";
 import { useState } from "react";
@@ -7,8 +6,10 @@ import { IAnimals } from "../models/IAnimal";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDroplet, faLeaf, faPoo } from "@fortawesome/free-solid-svg-icons";
-import { Footer } from "./Footer";
+
 import bucket from "../assets/bucket.png";
+import { HandleAnimalCare } from "./HandleAnimalCare";
+import { WaterBucket } from "./styled/Images";
 
 export const AnimalView = () => {
   const params = useParams();
@@ -128,11 +129,11 @@ export const AnimalView = () => {
                 src={current?.imageUrl}
                 alt="picture of animal"
               />
-              <img
+              <WaterBucket
                 id={current.id === 5 ? "hide" : "bucket"}
                 src={bucket}
-                alt="picture of animal"
-              />
+                alt="vattenskål"
+              ></WaterBucket>
             </div>
 
             <div className="textContainer">
@@ -145,9 +146,7 @@ export const AnimalView = () => {
                 <button onClick={handleFeedingClick}>
                   <FontAwesomeIcon icon={faLeaf} />
                 </button>
-                <button onClick={handleWater}>
-                  <FontAwesomeIcon icon={faDroplet} />
-                </button>
+                <HandleAnimalCare clicked={current}></HandleAnimalCare>
                 <button onClick={handleCleaning}>
                   <FontAwesomeIcon icon={faPoo} />
                 </button>
